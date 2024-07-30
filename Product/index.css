@@ -1,292 +1,378 @@
-:root{
-    --mainColor:#09203f;
-    --secondColor:#ffecd2;
+:root {
+  --mainColor: #09203f;
+  --secondColor: #ffecd2;
 }
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  transition: 0.4s;
 }
 
 /* 設定導覽列為flexbox、內容自動分配空白及固定高度 */
 header {
-    display: flex;
-    height: 80px;
-    background-color: var(--mainColor);
-    justify-content: space-between;
-    padding: 0 2%;
+  display: flex;
+  height: 80px;
+  background-color: var(--mainColor);
+  justify-content: space-between;
+  padding: 0 2%;
 }
 
 /* 設定logo容器的大小尺寸、垂直置中 */
 .logo {
-    padding: 0 30px;
-    height: 80px;
-    /* align-items的先決條件為flexbox */
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+  padding: 0 30px;
+  height: 80px;
+  /* align-items的先決條件為flexbox */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* 設定logo圖片大小、顏色 */
 .logo img {
-    height: 50px;
-    filter: brightness(7);
+  height: 50px;
+  filter: brightness(7);
 }
 
 /* 設定導覽列容器為flexbox及取消預設圖示 */
 .mainNav ul {
-    height: 80px;
-    display: flex;
-    list-style: none;
+  height: 80px;
+  display: flex;
+  list-style: none;
 }
 
 /* 設定a連結垂直置中、文字顏色、大小及預設樣式 */
 .mainNav a {
-    padding: 0 30px;
-    font-size: 24px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    color: var(--secondColor);
-    text-decoration: none;
+  padding: 0 30px;
+  font-size: 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--secondColor);
+  text-decoration: none;
 }
 
 /* 設定a連結被hover時樣式 */
 .mainNav a:hover {
-    background-color: var(--secondColor);
-    color: var(--mainColor);
+  background-color: var(--secondColor);
+  color: var(--mainColor);
+}
+
+/* 平板、手機 */
+.menu {
+  display: none;
 }
 
 /* 輪播牆 */
 .sliderArea {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .sliderBox {
-    display: flex;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    justify-content: center;
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
 }
 
 .sliderMask {
-    width: 60%;
-    aspect-ratio: 1/0.5;
-    border-radius: 20px;
-    overflow: hidden;
-    flex-shrink: 0;
-    scale: 0.6;
+  width: 60%;
+  aspect-ratio: 1/0.5;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  scale: 0.6;
 }
 
 .sliderMain {
-    scale: 1;
+  scale: 1;
 }
 
 .sliderMask img {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 輪播牆按鈕 */
 
+.sliderBtn {
+  margin-bottom: 30px;
+}
+
 .sliderBtn ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
+  display: flex;
+  list-style: none;
+  justify-content: center;
 }
 
 .sliderBtn li {
-    margin: 10px 20px;
-    cursor: pointer;
-    font-size: 20px;
+  margin: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .activeBtn {
-    background-color: var(--secondColor);
-    border-radius: 50%;
+  background-color: var(--secondColor);
+  border-radius: 50%;
 }
 
 /* 主要內容 */
 main {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 /* 篩選器、搜尋列 */
+.ControlBoxBG {
+  background-color: var(--mainColor);
+  border-radius: 10px;
+}
 .ControlBox {
-    background-color: var(--mainColor);
-    display: flex;
-    border-radius: 10px;
-    justify-content: space-between;
-    padding: 10px 30px;
+  /* width: 80%; */
+  margin: auto;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
 }
 
 .ControlBox select {
-    margin-right: 30px;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.ControlBox select:not(:last-child) {
+  margin-right: 30px;
 }
 
 .searchBox {
-    display: flex;
-    border-radius: 5px;
-    background-color: white;
-    overflow: hidden;
+  display: flex;
+  border-radius: 5px;
+  background-color: white;
+  overflow: hidden;
 }
 
 .searchBox input {
-    width: 250px;
-    font-size: 16px;
-    border: none;
-    padding: 0 20px;
+  width: 200px;
+  font-size: 16px;
+  border: none;
+  padding: 0 20px;
 }
 
 .searchBox input:focus {
-    outline: none;
+  outline: none;
 }
 
 .searchBox button {
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    padding: 0 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 0 15px;
 }
 
 /* 排序、收藏、待播清單 */
-.controlBox_2{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-top: 30px;
+.controlBox_2 {
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px auto 0;
 }
-.sort{
-    display: flex;
-    align-items: center;
-    margin: 0 20px;
+.btns {
+  display: flex;
+  column-gap: 20px;
 }
-.sort select{
-    padding: 10px 15px;
-    margin-left: 10px;
-    border-radius: 5px;
+.sort {
+  display: flex;
+  align-items: center;
 }
-.btnBorder{
-    margin: 0 20px;
-    padding: 10px;
-    border: 1px solid var(--mainColor);
-    border-radius: 10px;
+.sort select {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
 }
-.liked{
-    display: flex;
-    align-items: center;
+.btnBorder {
+  padding: 10px;
+  border: 1px solid var(--mainColor);
+  border-radius: 10px;
 }
-.myList{
-    height: 23px;
-    display: flex;
-    align-items: center;
+.liked {
+  display: flex;
+  align-items: center;
 }
-.myList img{
-    height: 100%;
-    object-fit: cover;
+.myList {
+  height: 23px;
+  display: flex;
+  align-items: center;
 }
-.controlBox_2 p{
-    padding-left: 5px;
+.myList img {
+  height: 100%;
+  object-fit: cover;
+}
+.controlBox_2 p {
+  padding-left: 5px;
 }
 
 /* 卡片區塊 */
 .cardBox {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* 卡片 */
 .card {
-    margin: 40px;
-    width: 300px;
-    background-color: white;
-    box-shadow: 1px 1px 5px #666;
+  margin: 40px;
+  width: 300px;
+  background-color: white;
+  box-shadow: 1px 1px 5px #666;
 }
 
 /* 卡片圖片、圓形圖片、清單 */
-.imgBox{
-    width: 100%;
-    height: 200px;
-    position: relative;
+.imgBox {
+  width: 100%;
+  height: 200px;
+  position: relative;
 }
-.imgBox img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.imgBox .circleImgBox{
-    position: absolute;
-    bottom: 0;
-    right: 20px;
-    transform: translateY(50px);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
+.imgBox .circleImgBox {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  transform: translateY(50px);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
 }
-.imgBox .circleImgBox .circleImg{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.imgBox .circleImgBox .circleImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.myListIcon{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    overflow: hidden;
-    cursor: pointer;
+.myListIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 /* 卡片文字 */
-.cardTextBox{
-    padding: 20px;
+.cardTextBox {
+  padding: 20px;
 }
-.cardTag{
-    display: inline-flex;
-    background-color: var(--mainColor);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+.cardTag {
+  display: inline-flex;
+  background-color: var(--mainColor);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-.cardTitle{
-    margin: 12px 0;
-    color: var(--mainColor);
-    font-size: 30px;
+.cardTitle {
+  margin: 12px 0;
+  color: var(--mainColor);
+  font-size: 30px;
 }
-.cardInfo{
-    position: relative;
-    font-size: 14px;
-    color: #666;
+.cardInfo {
+  position: relative;
+  font-size: 14px;
+  color: #666;
 }
-.cardInfo .cardLike{
-    position: absolute;
-    right: 0;
+.cardInfo .cardLike {
+  position: absolute;
+  right: 0;
 }
-.cardInfo .cardLike i{
-    cursor: pointer;
+.cardInfo .cardLike i {
+  cursor: pointer;
 }
 
 /* footer */
-footer{
-    text-align: center;
-    color: var(--secondColor);
-    background-color: var(--mainColor);
-    padding: 20px;
+footer {
+  text-align: center;
+  color: var(--secondColor);
+  background-color: var(--mainColor);
+  padding: 20px;
 }
-footer p{
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--secondColor);
+footer p {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--secondColor);
+}
+
+/* 平板 */
+
+@media screen and (max-width: 1024px) {
+  .mainNav {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin-right: 20px;
+    color: var(--secondColor);
+    cursor: pointer;
+  }
+  .ControlBox {
+    flex-direction: column;
+    padding: 30px;
+  }
+  .selectBox {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .selectBox select {
+    width: 30%;
+  }
+  .searchBox {
+    height: 40px;
+  }
+  .searchBox input {
+    width: 100%;
+  }
+}
+
+/* 手機 */
+
+@media screen and (max-width: 768px) {
+  .sliderBox {
+    margin-top: 0;
+  }
+  .sliderMain {
+    width: 100%;
+    border-radius: unset;
+  }
+  .selectBox {
+    flex-direction: column;
+  }
+  .selectBox select {
+    width: 100%;
+  }
+  .selectBox select:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .controlBox_2 {
+    flex-direction: column;
+  }
+  .sort {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .btns {
+    margin-bottom: 20px;
+    justify-content: space-between;
+    width: 100%;
+  }
 }

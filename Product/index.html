@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>網頁設計入門-參考範例</title>
+    <title>商城列表-參考範例</title>
     <!-- font awesome CDN -->
     <link
       rel="stylesheet"
@@ -15,7 +15,7 @@
     />
     <!-- 引入CSS -->
     <link rel="stylesheet" href="index.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
   </head>
   <body>
     <!-- 導覽列(選單) -->
@@ -39,6 +39,7 @@
           <li><a href="#">登入/註冊</a></li>
         </ul>
       </nav>
+      <div class="menu"><i class="fa-solid fa-bars"></i></div>
     </header>
     <!-- 輪播牆顯示區塊 ( 一個網頁可以有多個<nav> ) -->
     <nav class="sliderArea">
@@ -66,34 +67,50 @@
     <!-- 主內容 -->
     <main id="main">
       <!-- 篩選器、搜尋列 -->
-      <div class="ControlBox">
-        <div class="selectBox">
-          <select name="course" id="course">
-            <option value="0" hidden>課程分類</option>
-            <option value="1">項目一</option>
-            <option value="2">項目二</option>
-            <option value="3">項目三</option>
-          </select>
-          <select name="coach" id="coach">
-            <option value="0" hidden>教練</option>
-            <option value="1">項目一</option>
-            <option value="2">項目二</option>
-            <option value="3">項目三</option>
-          </select>
-          <select name="level" id="level">
-            <option value="0" hidden>難易度</option>
-            <option value="1">項目一</option>
-            <option value="2">項目二</option>
-            <option value="3">項目三</option>
-          </select>
-        </div>
-        <div class="searchBox">
-          <input type="text" placeholder="關鍵字搜尋" />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      <div class="ControlBoxBG">
+        <div class="ControlBox">
+          <div class="selectBox">
+            <select name="course" id="course">
+              <option value="0" hidden>課程分類</option>
+              <option value="1">項目一</option>
+              <option value="2">項目二</option>
+              <option value="3">項目三</option>
+            </select>
+            <select name="coach" id="coach">
+              <option value="0" hidden>教練</option>
+              <option value="1">項目一</option>
+              <option value="2">項目二</option>
+              <option value="3">項目三</option>
+            </select>
+            <select name="level" id="level">
+              <option value="0" hidden>難易度</option>
+              <option value="1">項目一</option>
+              <option value="2">項目二</option>
+              <option value="3">項目三</option>
+            </select>
+          </div>
+          <div class="searchBox">
+            <input type="text" placeholder="關鍵字搜尋" />
+            <button type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
         </div>
       </div>
       <!-- 控制列2 -->
       <div class="controlBox_2">
+        <div class="btns">
+          <!-- 收藏 -->
+          <div class="liked btnBorder">
+            <i class="fa-regular fa-heart"></i>
+            <p>我的收藏清單</p>
+          </div>
+          <!-- 待播清單 -->
+          <div class="myList btnBorder">
+            <img src="./images/play-list-MainColor.png" alt="" />
+            <p>我的待播清單</p>
+          </div>
+        </div>
         <!-- 排序方式 -->
         <div class="sort">
           <label for="a">排序方式：</label>
@@ -102,45 +119,16 @@
             <option value="liked">收藏數量</option>
           </select>
         </div>
-        <!-- 收藏 -->
-        <div class="liked btnBorder">
-          <i class="fa-regular fa-heart"></i>
-          <p>我的收藏清單</p>
-        </div>
-        <!-- 待播清單 -->
-        <div class="myList btnBorder">
-          <img src="./images/play-list-MainColor.png" alt="" />
-          <p>我的待播清單</p>
-        </div>
       </div>
       <!-- 卡片區塊 -->
-      <div class="cardBox" id="cardBox">
-        <!-- <div class="card">
-          卡片圖片、圓形圖片
-          <div class="imgBox">
-            <img src="./images/courseImg.jpg" alt="course">
-            <div class="circleImgBox">
-              <img src="./images/user.jpg" alt="user" class="circleImg">
-            </div>
-            <div class="myListIcon">
-              <img src="./images/play-list-bg.png" alt="">
-            </div>
-          </div>
-          卡片文字
-          <div class="cardTextBox">
-            <p class="cardTag">標籤</p>
-            <h2 class="cardTitle">卡片標題</h2>
-            <div class="cardInfo">
-              <span class="cardView">觀看次數：399</span>
-              <span class="cardDate">2023-03-23</span>
-              <span class="cardLike"><i class="fa-regular fa-heart"></i> 199</span>
-            </div>
-          </div>
-        </div> -->
-      </div>
+      <div class="cardBox" id="cardBox"></div>
     </main>
     <footer>
-      <p>本網頁所載的資料、商標、雕製、圖像、短片、聲音檔案、連結及其他資料等，以下簡稱為「 資料 」，只供資展國際(原資策會)專題發表使用，如有侵權，請聯繫eddiewang@ispan.com.tw，會立即下架，謝謝。</p>
+      <p>
+        本網頁所載的資料、商標、雕製、圖像、短片、聲音檔案、連結及其他資料等，以下簡稱為「
+        資料
+        」，只供資展國際(原資策會)專題發表使用，如有侵權，請聯繫eddiewang@ispan.com.tw，會立即下架，謝謝。
+      </p>
       <small>&copy;資展國際股份有限公司 iSpan 2023</small>
     </footer>
     <!-- 使用JS隨機渲染卡片數量 -->
