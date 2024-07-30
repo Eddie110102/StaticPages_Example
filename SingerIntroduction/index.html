@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML範例</title>
+    <!-- Fontawesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="./images/logo.png">
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.png" alt="LOGO" />
+      <nav>
+        <ul>
+          <li>團員資料</li>
+          <li>成員列表</li>
+          <li>音樂作品</li>
+          <li>獎項榮譽</li>
+        </ul>
+      </nav>
+      <div>
+        <a href="#"><i class="fa-solid fa-user"></i> 登入/註冊</a>
+      </div>
+    </header>
+    <div class="container">
+      <aside class="banner">
+        <h2>音樂作品</h2>
+      </aside>
+      <section class="flexbox p-20">
+        <div class="control-bar">
+          <h2 class="title">專輯分類</h2>
+          <div class="button-group">
+            <button class="active">迷你專輯</button>
+            <button>特別專輯</button>
+            <button>正規專輯</button>
+            <button>改版專輯</button>
+            <button>日文專輯</button>
+            <button>英文單曲</button>
+          </div>
+        </div>
+        <main>
+          <h2 class="title">1st Mini Album : The Story Begins</h2>
+          <div class="flexbox p-20">
+            <div class="first-section">
+              <section>
+                <h3 class="subtitle">專輯資訊</h3>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>發行日期</td>
+                      <td>：</td>
+                      <td>2015/10/20</td>
+                    </tr>
+                    <tr>
+                      <td>曲目</td>
+                      <td>：</td>
+                      <td>
+                        1. Like OOH-AHH <br />
+                        2. Do it again <br />
+                        3. I think I'm crazy <br />
+                        4. Truth <br />
+                        5. Candy boy <br />
+                        6. Like a fool
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section>
+                <h3 class="subtitle">專輯封面</h3>
+                <div class="album-cover-container">
+                  <img src="./images/1st_album_cover.jpg" alt="" />
+                </div>
+              </section>
+            </div>
+            <div class="second-section">
+              <h3 class="subtitle">相關影片</h3>
+              <iframe
+                src="https://www.youtube.com/embed/vYkGpOeqp4g?si=cz6CWXejhAXN-TXX"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
+    <aside class="flexbox justify-around">
+      <a href="https://www.youtube.com/channel/UCzgxx_DM2Dcb9Y1spb9mUJA" class="link" target="_blank">
+        <div class="link-btn">
+          <img src="./images/youtube.png" alt="" />
+        </div>
+      </a>
+      <a href="https://www.instagram.com/twicetagram/" class="link" target="_blank">
+        <div class="link-btn">
+          <img src="./images/Instagram.jpg" alt="" />
+        </div>
+      </a>
+    </aside>
+    <footer>
+        資展國際股份有限公司 iSpan 2024 &copy; | 僅供網頁設計入門練習使用
+    </footer>
+  </body>
+</html>

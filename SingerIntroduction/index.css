@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 導覽列設定 */
+header {
+  height: 70px;
+  border-bottom: 1px solid gray;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+/* LOGO設定 */
+header img {
+  height: 40px;
+}
+
+/* MENU設定 */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  color: #666;
+}
+
+nav li {
+  padding: 0 20px;
+  border-right: 1px solid #666;
+}
+
+nav li:last-child {
+  border-right: 0;
+}
+
+header a {
+  color: #666;
+  text-decoration: none;
+}
+
+/* 主要內容左右留白 */
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* Banner */
+.banner {
+  height: 250px;
+  background-image: url(./images/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner h2 {
+  margin: 0;
+  font-size: 70px;
+  text-align: center;
+  line-height: 250px;
+  color: white;
+}
+
+/* 主要部份(共用CSS) */
+
+.flexbox {
+  display: flex;
+}
+
+.title {
+  margin: 0 10px;
+  line-height: 1.2em;
+  border-bottom: 2px solid black;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.subtitle {
+  width: 80px;
+  padding: 2px 10px;
+  margin-bottom: 20px;
+  background-color: #fcc89b;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+/* 主要排版 */
+.control-bar {
+  width: 20%;
+}
+
+main {
+  width: 80%;
+}
+
+.first-section {
+  width: 30%;
+}
+
+.first-section section {
+  margin-bottom: 20px;
+}
+.second-section {
+  width: 70%;
+  margin-left: 20px;
+}
+
+footer {
+  text-align: right;
+  background-color: #fcc89b;
+  padding: 10px;
+}
+
+/* 音樂作品(控制列表) */
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-group button {
+  color: white;
+  font-size: 20px;
+  background-color: #999;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+  border: 0;
+}
+
+.button-group button.active {
+  background-color: #fcc89b;
+}
+
+/* 專輯資訊 */
+tr > :first-child {
+  text-align-last: justify;
+}
+
+td {
+    font-size: 18px;
+
+  vertical-align: top;
+}
+
+/* 專輯封面 */
+.album-cover-container {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.album-cover-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 相關影片 */
+iframe {
+  /* 將影片寬度與 second-section 寬度一樣，透過 aspect-ratio 自動換算高度 */
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* 社群連結 */
+
+.link-btn {
+  width: 100px;
+  height: 60px;
+  overflow: hidden;
+}
+.link-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

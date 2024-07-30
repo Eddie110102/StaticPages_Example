@@ -1,0 +1,746 @@
+/* 電腦尺寸 1024px 以上 */
+/* 平板尺寸 768px - 1024px */
+/* 手機尺寸 767px 以下 */
+
+:root {
+  --main-gray: #292f36;
+  --main-golden: #cda274;
+  --light-golden: #f4f0ec;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", "Noto Sans TC";
+  /* outline: solid red; */
+}
+
+/* 通用CSS start */
+
+/* 文字樣式 */
+
+h1 {
+  font-size: 85px;
+}
+h2 {
+  font-size: 35px;
+}
+h3 {
+  font-size: 25px;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}
+p {
+  line-height: 1.8;
+}
+
+.p-large {
+  font-size: 16px;
+}
+
+.p-medium {
+  font-size: 14px;
+}
+
+.p-small {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h4 {
+    font-size: 22px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 18px;
+  }
+  p {
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* 外邊距、內邊距 */
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-30 {
+  margin: 30px;
+}
+
+.container {
+  max-width: 1152px;
+  width: 80%;
+  margin: auto;
+  /* background-color: red; */
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+/* 深色按鈕 */
+.main-button {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: var(--main-gray);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 1px 3px 10px gray;
+}
+
+/* 無框按鈕 */
+.noborder-button {
+  background-color: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 文字與箭頭間的距離 */
+.main-button > span,
+.noborder-button > span {
+  margin-left: 8px;
+}
+
+/* 金色箭頭符號 */
+.golden-color {
+  color: var(--main-golden);
+}
+
+/* 淡金色圓形 */
+.light-golden-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--light-golden);
+  flex-shrink: 0;
+}
+
+/* 淡金色圓形內層圖示 */
+.light-golden-circle > * {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .container {
+    width: 90%;
+    /* background-color: pink; */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 90%;
+    /* background-color: lightblue; */
+  }
+}
+
+/* 通用CSS end */
+/* ------------------------ */
+/* Header start */
+
+header.flexbox {
+  margin: 30px auto;
+  justify-content: space-between;
+}
+
+/* nav 導覽列 */
+
+/* 電腦版與平版隱藏菜單按鈕 */
+.hambuger {
+  display: none;
+  color: #999;
+}
+
+/* 導覽地圖樣式設定 */
+.sitemap {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #999;
+  transition: 0.4s;
+}
+
+/* 導覽地圖水平並排 */
+.sitemap li {
+  display: flex;
+  align-items: center;
+}
+
+/* 導覽地圖選項之間距離設定 */
+.sitemap li:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* 超連結樣式設定 */
+.sitemap a,
+.navbar ul > :last-child {
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+}
+
+/* 隱藏 "搜尋字樣" 、 手機版 menu 關閉按鈕 */
+.material-symbols-outlined.search + span,
+.material-symbols-outlined.close {
+  display: none;
+}
+
+/* 手機版 menu */
+@media screen and (max-width: 767px) {
+  header.flexbox {
+    margin: 10px auto;
+    position: relative;
+  }
+  /* 顯示手機版 menu 按鈕 */
+  .hambuger {
+    display: inline;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+  }
+  /* 調整導覽地圖背景、位置設定(預設隱藏) */
+  .navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.4s;
+  }
+
+  /* 導覽地圖(顯示背景) */
+  .navbar.show {
+    background-color: var(--main-golden);
+    z-index: 3;
+  }
+
+  .sitemap {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    opacity: 0;
+    font-size: 18px;
+    visibility: hidden;
+  }
+
+  /* 導覽地圖水平並排改垂直就不需要右方間距 */
+  .sitemap li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  /* 顯示 "搜尋" 文字 */
+  .material-symbols-outlined.search + span {
+    display: inline;
+  }
+
+  /* 導覽地圖(顯示) */
+  .sitemap.show {
+    opacity: 1;
+    z-index: 10;
+    visibility: visible;
+  }
+
+  /* 導覽地圖關閉按鈕(顯示) */
+  .close.show {
+    display: inline;
+    position: fixed;
+    top: 30px;
+    right: 12.5px;
+    z-index: 11;
+    color: black;
+  }
+
+  /* 導覽地圖項目被HOVER時效果 */
+  .sitemap a:hover,
+  .navbar ul > :last-child:hover {
+    color: white;
+    cursor: pointer;
+    border-bottom: 2px solid white;
+  }
+  .navbar .close:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/* Header end */
+/* ------------------------ */
+/* Banner start */
+
+/* 廣告橫幅與背景圖片 */
+.banner {
+  width: 100%;
+  height: calc(100vh - 115px);
+  border-bottom-left-radius: 150px;
+  overflow: hidden;
+  background: center/ cover no-repeat url(../images/banner-livingroom.jpg);
+}
+
+/* 廣告文字定位 */
+.banner-text {
+  width: 70%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 廣告文字標題 */
+.banner-text h1 {
+  margin-bottom: 30px;
+}
+
+/* 廣告文字副標題 */
+.banner-text p {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .banner-text {
+    width: 80%;
+    left: 0;
+    margin: auto;
+  }
+  .banner-text h1 {
+    font-size: 40px;
+  }
+}
+/* Banner end */
+/* ------------------------ */
+/* Service-list start */
+
+/* 服務項目版型 */
+.service-list {
+  margin: 100px auto;
+  justify-content: space-between;
+}
+
+/* 單一服務項目 */
+.service-list section {
+  width: 30%;
+}
+
+/* 單一服務項目標題 */
+.service-list h2 {
+  margin-bottom: 20px;
+}
+
+/* 單一服務項目副標題 */
+.service-list p {
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 767px) {
+  .service-list {
+    width: 70%;
+    flex-direction: column;
+    margin: 50px auto;
+  }
+  /* 單一服務項目排版樣式(基數與偶數左右穿插) */
+  .service-list section {
+    margin: 30px 0;
+    width: 60%;
+    align-self: flex-start;
+  }
+  .service-list section:nth-child(even) {
+    align-self: flex-end;
+  }
+  .service-list h2 {
+    margin-bottom: 10px;
+  }
+  .service-list p {
+    margin-bottom: 20px;
+  }
+}
+/* Service-list end */
+/* ------------------------ */
+/* Recommend start */
+.recommend {
+  margin: 100px auto;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+/* 推薦文字 */
+.recommend-text {
+  width: 40%;
+  padding: 50px 0;
+}
+.recommend-text h2 {
+  margin-bottom: 30px;
+}
+.recommend-text p {
+  margin-bottom: 30px;
+}
+/* 推薦照片 */
+.recommend-photo {
+  width: 50%;
+  min-height: 700px;
+  border-top-right-radius: 200px;
+  border-bottom-left-radius: 100px;
+  overflow: hidden;
+}
+.recommend-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 推薦聯絡方式 */
+.recommend-contact {
+  margin-bottom: 30px;
+}
+
+.recommend-contact .light-golden-circle {
+  width: 75px;
+  height: 75px;
+}
+
+.recommend-contact-text {
+  margin-left: 15px;
+}
+.recommend-contact-text span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .recommend > :first-child {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .recommend {
+    flex-direction: column-reverse;
+    margin: 50px auto;
+  }
+  .recommend > * {
+    width: 90%;
+    margin: auto;
+  }
+
+  .recommend-text h2,
+  .recommend-text p {
+    text-align: center;
+  }
+
+  .recommend-contact-mobile-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .recommend-contact {
+    margin-bottom: 0;
+  }
+
+  .recommend-photo {
+    min-height: auto;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 50px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .recommend-contact-mobile-flex {
+    flex-direction: column;
+  }
+  .recommend-contact {
+    margin-bottom: 20px;
+  }
+}
+/* Recommend end */
+/* ------------------------ */
+/* Comment Start */
+
+/* 留言區域 */
+.comment {
+  background-color: var(--light-golden);
+  border-radius: 50px;
+  padding: 60px 30px;
+  margin: 100px auto;
+  box-sizing: border-box;
+}
+
+/* 單一留言卡片 */
+.comment-card {
+  box-sizing: border-box;
+  width: 30%;
+  background-color: white;
+  padding: 50px;
+  border-radius: 50px;
+}
+
+/* 使用者大頭貼 */
+.avatar {
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .comment > .flexbox {
+    flex-direction: column;
+  }
+  .comment-card {
+    margin: 20px;
+    padding: 50px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .comment {
+    margin: 50px auto;
+    padding: 30px;
+  }
+  .comment > .flexbox {
+    flex-direction: column;
+  }
+  .comment-card {
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+/* Comment end */
+/* ------------------------ */
+/* Brand Start */
+
+.brand {
+  margin: 100px auto;
+}
+
+/* 單一品牌盒子 */
+.brand-box {
+  width: 15%;
+  aspect-ratio: 2/1;
+  overflow: hidden;
+}
+
+.brand-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+  .brand {
+    margin: 50px auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .brand-box {
+    width: 30%;
+    margin: 20px 0;
+  }
+}
+
+/* Brand end */
+/* ------------------------ */
+/* Project Start */
+
+/* 項目區域 */
+.project {
+  margin: 100px auto;
+}
+
+/* 項目列表 */
+.project-box {
+  gap: 30px 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* 各項目圓角位置 */
+.project-box :nth-child(4n + 1) .picture-box {
+  border-top-right-radius: 50px;
+}
+
+.project-box :nth-child(4n + 2) .picture-box {
+  border-top-left-radius: 50px;
+}
+
+.project-box :nth-child(4n + 3) .picture-box {
+  border-bottom-right-radius: 50px;
+}
+
+.project-box :nth-child(4n) .picture-box {
+  border-bottom-left-radius: 50px;
+}
+
+/* 卡片大小 */
+.project-card {
+  width: 40%;
+}
+
+/* 項目圖片 */
+.picture-box {
+  /* width: 100%; */
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.picture-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 576px) {
+  .project {
+    margin: 50px auto;
+  }
+  .project-box {
+    margin-top: 20px;
+  }
+  .project-card {
+    width: 100%;
+  }
+}
+/* Project end */
+/* ------------------------ */
+/* Statistical-data Start */
+
+/* 統計數字區域 */
+.statistical-data {
+  background-color: var(--light-golden);
+  margin: 100px auto;
+  justify-content: center;
+}
+
+/* 單一統計數字卡片 */
+.data-card {
+  text-align: center;
+  padding: 0 50px;
+  margin: 50px 0;
+  border-right: 2px solid var(--main-golden);
+}
+
+/* 卡片標題 */
+.data-card h2 {
+  font-size: 50px;
+  color: var(--main-golden);
+}
+
+/* 最後一張卡片不需要分隔線 */
+ .data-card:last-child {
+  border-right: none;
+}
+
+@media screen and (max-width:767px) {
+  .statistical-data{
+    flex-wrap: wrap;
+    margin: 50px auto;
+  }
+  .data-card{
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .data-card:nth-child(2n){
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .data-card{
+    width: 100%;
+  }
+  .data-card{
+    border-right: none;
+  }
+}
+/* Statistical-data end */
+/* ------------------------ */
+/*  Start */
