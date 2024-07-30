@@ -1,20 +1,10 @@
-# 靜態切版作業參考
+## 靜態切版練習參考
 
-### 音樂做品
-[程式碼](./SingerIntroduction/)
+### [首頁](https://Eddie110102.github.io/StaticPages_Example)
 
-[靜態網站](https://Eddie110102.github.io/StaticPages_Example/SingerIntroduction)
 
---- 
-
-### 商城列表
-[程式碼](./Product/)
-
-[靜態網站](https://Eddie110102.github.io/StaticPages_Example/Product)
-
---- 
-
-### 室內設計
-[程式碼](./Interno/)
-
-[靜態網站](https://Eddie110102.github.io/StaticPages_Example/Interno)
+| 專案名稱 | 靜態頁面 | 程式碼 |
+| :--: | :--: | :--: |
+| 音樂作品 | [連結](https://Eddie110102.github.io/StaticPages_Example/SingerIntroduction) | [連結](./SingerIntroduction/) |
+| 商城列表 | [連結](https://Eddie110102.github.io/StaticPages_Example/Product) | [連結](./Product/) |
+| 室內設計 | [連結](https://Eddie110102.github.io/StaticPages_Example/Interno) | [連結](./Interno/) |
