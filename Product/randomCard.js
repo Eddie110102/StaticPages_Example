@@ -11,4 +11,4 @@ for (let i = 0; i < random; i++) {
 
 // 補齊空白卡片
 cardBox.innerHTML +=
-  '<div style="width:380px;"></div><div style="width:380px;"></div><div style="width:380px;"></div>';
+  '<div style="width:300px;"></div><div style="width:300px;"></div><div style="width:300px;"></div>';

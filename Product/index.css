@@ -219,16 +219,21 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 40px;
+  margin: 40px 0;
 }
 
 /* 卡片 */
 .card {
-  margin: 40px;
-  width: 300px;
+  /* margin: 40px; */
+  max-width: 300px;
+  width: 100%;
   background-color: white;
   box-shadow: 1px 1px 5px #666;
 }
-
+.card:last-child{
+  margin-right:  0;
+}
 /* 卡片圖片、圓形圖片、清單 */
 .imgBox {
   width: 100%;
@@ -374,5 +379,17 @@ footer p {
     margin-bottom: 20px;
     justify-content: space-between;
     width: 100%;
+  }
+  .cardBox{
+    gap: 0;
+  }
+  .card:not(:first-child){
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .btns{
+    font-size: 14px;
   }
 }
